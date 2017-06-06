@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -10,12 +8,11 @@ using MessagesApp.Models;
 using Newtonsoft.Json;
 using Xamarin.Forms;
 
-[assembly: Dependency(typeof(MessagesApp.Services.MockDataStore))]
+[assembly: Dependency(typeof(MessagesApp.Services.MessagesDataStore))]
 namespace MessagesApp.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MessagesDataStore : IDataStore<Item>
     {
-        bool isInitialized;
         List<Item> items;
 
         public async Task<bool> AddItemAsync(Item item)

@@ -17,10 +17,7 @@ namespace MessagesAPI.Controllers
 
         // GET api/messages
         [HttpGet]
-        public IEnumerable<Message> Get()
-        {
-            return Messages.OrderByDescending(x => x.Date);
-        }
+        public IEnumerable<Message> Get() => Messages.OrderByDescending(x => x.Date);
 
         // GET api/messages/5
         [HttpGet("{id}")]
