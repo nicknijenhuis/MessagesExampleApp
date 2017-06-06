@@ -28,8 +28,11 @@ namespace MessagesAPI.Controllers
 
         // POST api/messages
         [HttpPost]
-        public void Post([FromBody] string value)
+        public void Post([FromBody] Message message)
         {
+            message.Id = Messages.Max(x => x.Id) + 1;
+            message.Date = DateTime.UtcNow;
+            Messages.Add(message);
         }
 
         // PUT api/messages/5
