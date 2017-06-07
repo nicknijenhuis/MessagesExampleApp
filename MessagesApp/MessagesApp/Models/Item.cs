@@ -1,4 +1,6 @@
-﻿namespace MessagesApp.Models
+﻿using System;
+
+namespace MessagesApp.Models
 {
     public class Item : BaseDataObject
     {
@@ -15,5 +17,13 @@
             get { return _description; }
             set { SetProperty(ref _description, value); }
         }
+
+        DateTime _date;
+        public DateTime Date
+        {
+            get { return _date; }
+            set { SetProperty(ref _date, value); }
+        }
     }
+
 }
