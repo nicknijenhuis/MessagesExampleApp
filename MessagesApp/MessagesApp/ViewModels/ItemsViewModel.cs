@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using MessagesApp.Helpers;
 using MessagesApp.Models;
 using MessagesApp.Views;
-
 using Xamarin.Forms;
 
 namespace MessagesApp.ViewModels
@@ -23,9 +21,8 @@ namespace MessagesApp.ViewModels
 
             MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
             {
-                var _item = item as Item;
-                Items.Add(_item);
-                await DataStore.AddItemAsync(_item);
+                Items.Add(item);
+                await DataStore.AddItemAsync(item);
             });
         }
 
